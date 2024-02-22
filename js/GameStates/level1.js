@@ -10,6 +10,7 @@ var level = new GameObject({x:0,y:0});
 
 //Avatar
 var wiz = new GameObject({width:128, height:128, spriteData:playerData}).makeSprite(playerData)
+wiz.bottom = {x:0 ,y:32}
 wiz.force=1
 
 //The ground
@@ -90,7 +91,7 @@ for(let i=0; i<100; i++)
 	//bullets[i].img.src="images/mrt.jpg"
 	bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	bullets[i].changeState(`bullet`)
 }
 
 //console.log(bullets)
@@ -141,6 +142,7 @@ gameStates[`level1`] = function()
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
+		
 		//sounds.play(`splode`,1)
 	}
 	shotTimer--;
@@ -155,11 +157,13 @@ gameStates[`level1`] = function()
 
 	if(keys[` `] )
 	{
+		
 		if(canShoot)
 		{
 			wiz.changeState(`attack`)
 			shotTimer = shotDelay
-			//console.log(`Boom`)
+		
+			/*//console.log(`Boom`)
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
@@ -167,21 +171,23 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].y = wiz.y + 20;
 			bullets[currentBullet].dir = wiz.dir;
 			
-			//sounds.play(`splode`,1)
+			//sounds.play(`splode`,1)*/
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
 			{
 				currentBullet=0
 			}
+		
 
 		}
 	}
 	else
 	{
 		shotTimer=0
+		
 	}
-	
+	wiz.width = (wiz.currentState === `attack`)?262:128;
 	//-----Player movement-----///
 	wiz.vy+= gravity
 	wiz.vx *= friction.x
@@ -294,7 +300,30 @@ gameStates[`level1`] = function()
 	sprites.play().render(`drawSprite`);
 
 	//renders player
-	wiz.play(function(){return}).drawSprite()
+	wiz.play(function(){if(wiz.currentState === `attack`){
+		if(canShoot)
+		{
+			
+			//console.log(`Boom`)
+
+			bullets[currentBullet].vx = 5*wiz.dir;
+			bullets[currentBullet].world = level;
+			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
+			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].dir = wiz.dir;
+			
+			//sounds.play(`splode`,1)
+
+		//	currentBullet++;
+			//if(currentBullet>=bullets.length)
+			//{
+			//	currentBullet=0
+			//}
+		
+
+		}
+	}
+	return}).drawSprite()
 	
 	//Moves, checks collision and renders projectiles.
 	for(let i=0; i<bullets.length; i++)
@@ -316,6 +345,7 @@ gameStates[`level1`] = function()
 	
 	//Renders front of cave
 	front.play().render(`drawSprite`);
+	wiz.drawDebug();
 	
 
 }

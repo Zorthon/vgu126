@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/snale.png`
+		src:`images/Bear2.png`
 	},
 	states:{
 		//The idle animation 
@@ -29,23 +29,25 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0}
+				{width:128, height:128, startX:0, startY:256},
+				{width:128, height:128, startX:1*128, startY:256},
+				{width:128, height:128, startX:2*128, startY:256},
+				{width:128, height:128, startX:3*128, startY:256},
+				{width:128, height:128, startX:4*128, startY:256}
 				
 			]
 		},
 		//The walwidth:128, height:128,
 		walk:
 		{
-			fps:1,
+			fps:3,
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:0, startY:0},
-				{width:128, height:128, startX:128, startY:0},
-				{width:128, height:128, startX:256, startY:0},
-				{width:128, height:128, startX:384, startY:0},
-				{width:128, height:128, startX:512, startY:0}
+				{width:128, height:128, startX:0, startY:512},
+				{width:128, height:128, startX:1*128, startY:512},
+				{width:128, height:128, startX:2*128, startY:512}
+	
 			]
 		},
 		//The jump animation 
@@ -55,7 +57,12 @@ var playerData ={
 			cycle:false,
 			frames:
 			[
-				{width:128, height:128, startX:640, startY:0}
+				{width:128, height:128, startX:0, startY:384},
+				{width:128, height:128, startX:0*128, startY:384},
+				{width:128, height:128, startX:1*128, startY:384},
+				{width:128, height:128, startX:2*128, startY:384},
+				{width:128, height:128, startX:3*128, startY:384},
+				{width:128, height:128, startX:4*128, startY:384}
 			]
 		},
 		//The crouch animation 
@@ -65,11 +72,8 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:768, startY:0},
-				{width:128, height:128, startX:896, startY:0}
+				{width:128, height:128, startX:1*128, startY:128}
+				
 			]
 		},
 		//The attack animation 
@@ -77,17 +81,32 @@ var playerData ={
 		{
 			fps:3,
 			cycle:false,
-			//width:300,
+			//width:196,
 			frames:
 			[
-				{width:128, height:128, startX:1024, startY:0},
-				{width:128, height:128, startX:1024, startY:0},
-				{width:128, height:128, startX:1024, startY:0},
-				{width:128, height:128, startX:1152, startY:0},
-				{width:128, height:128, startX:1152, startY:0},
-				{width:128, height:128, startX:1152, startY:0},
-				{width:128, height:128, startX:1152, startY:0}
-				
+				//{width:196, height:128, startX:0, startY:0},
+				{width:262, height:128, startX:0*262, startY:0},
+				{width:262, height:128, startX:1*262, startY:0},
+				{width:262, height:128, startX:2*262, startY:0},
+				{width:262, height:128, startX:3*262, startY:0},
+				{width:262, height:128, startX:4*262, startY:0},
+				{width:262, height:128, startX:5*262, startY:0}
+	
+			]
+		},
+		//Bullet animation
+		bullet:
+		{
+			fps: 6,
+			cycle: true,
+			frames:
+			[
+				{width:64, height:64, startX:0, startY:640},
+				{width:64, height:64, startX:1*64, startY:640},
+				{width:64, height:64, startX:2*64, startY:640},
+				{width:64, height:64, startX:3*64, startY:640},
+				{width:64, height:64, startX:4*64, startY:640},
+				{width:64, height:64, startX:5*64, startY:640},
 			]
 		}
 	}

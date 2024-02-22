@@ -341,7 +341,7 @@ function GameObject(obj)
 
 	this.overlapShape = function(obj)
 	{
-		if(this.leftx + this.world.x <= obj.right.x + obj.world.x && 
+		if(this.left.x + this.world.x <= obj.right.x + obj.world.x && 
 		   this.right.x + this.world.x >= obj.left.x + obj.world.x &&
 		   this.top.y + this.world.y <= obj.bottom.y + obj.world.y &&
 		   this.bottom.y + this.world.y >= obj.top.y + obj.world.y)
@@ -383,10 +383,10 @@ function GameObject(obj)
 		var size = 5;
 		context.save();
 		context.fillStyle = "black";
-		context.fillRect(this.left().x-size/2, this.left().y-size/2, size, size);
-		context.fillRect(this.right().x-size/2, this.right().y-size/2, size, size);
-		context.fillRect(this.top().x-size/2, this.top().y-size/2, size, size);
-		context.fillRect(this.bottom().x-size/2, this.bottom().y-size/2, size, size);
+		context.fillRect(this.left.x-size/2, this.left.y-size/2, size, size);
+		context.fillRect(this.right.x-size/2, this.right.y-size/2, size, size);
+		context.fillRect(this.top.x-size/2, this.top.y-size/2, size, size);
+		context.fillRect(this.bottom.x-size/2, this.bottom.y-size/2, size, size);
 		context.fillRect(this.x-size/2, this.y-size/2, size, size);
 		context.restore();
 	}
