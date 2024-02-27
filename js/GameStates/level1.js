@@ -309,7 +309,7 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
 			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].y = wiz.y + 5;
 			bullets[currentBullet].dir = wiz.dir;
 			
 			//sounds.play(`splode`,1)
@@ -332,7 +332,7 @@ gameStates[`level1`] = function()
 		bullets[i].move()
 		bullets[i].play(function(){return}).drawSprite()
 		//bullets[i].angle+=10
-		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
+		//while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{
 			
 			bullets[i].vy=0;
