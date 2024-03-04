@@ -58,11 +58,11 @@ var playerData ={
 			frames:
 			[
 				{width:128, height:128, startX:0, startY:384},
-				{width:128, height:128, startX:0*128, startY:384},
-				{width:128, height:128, startX:1*128, startY:384},
+				//{width:128, height:128, startX:0*128, startY:384},
+				//{width:128, height:128, startX:1*128, startY:384},
 				{width:128, height:128, startX:2*128, startY:384},
-				{width:128, height:128, startX:3*128, startY:384},
-				{width:128, height:128, startX:4*128, startY:384}
+				//{width:128, height:128, startX:3*128, startY:384},
+				//{width:128, height:128, startX:4*128, startY:384}
 			]
 		},
 		//The crouch animation 

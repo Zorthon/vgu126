@@ -1,6 +1,6 @@
 
 /*------------Use this if you want to implement States---------------*/
-var gravity = 1;
+var gravity = 2;
 var friction = {x:.85,y:.97}
 
 var stage = new GameObject({width:canvas.width, height:canvas.height});
@@ -15,10 +15,10 @@ wiz.force=1
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2-200,height:64,y:canvas.height-32, color:"green", world:level})
-ground.img.src=`images/ground.png`
+ground.img.src=`images/floor.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green", world:level})
+var plat = new GameObject({width:256, height:64,y:canvas.height-200, x:canvas.width-500,hitBoxHeight:-500, color:"green", world:level})
 
 
 
