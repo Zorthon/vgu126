@@ -18,7 +18,7 @@ var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2-200,heig
 ground.img.src=`images/floor.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, x:canvas.width-500,hitBoxHeight:-500, color:"green", world:level})
+var plat = new GameObject({width:256, height:64,y:canvas.height-200, x:canvas.width-500, color:"green", world:level})
 
 
 
@@ -143,7 +143,7 @@ gameStates[`level1`] = function()
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
 		
-		//sounds.play(`splode`,1)
+		sounds.play(`splode`,1)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -169,9 +169,9 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].world = level;
 			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
 			bullets[currentBullet].y = wiz.y + 20;
-			bullets[currentBullet].dir = wiz.dir;
+			bullets[currentBullet].dir = wiz.dir;*/
 			
-			//sounds.play(`splode`,1)*/
+			sounds.play(`splode`,1)
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
