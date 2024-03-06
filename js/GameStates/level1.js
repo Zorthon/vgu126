@@ -1,4 +1,6 @@
 
+sounds.play('backgroundMusic')
+
 /*------------Use this if you want to implement States---------------*/
 var gravity = 2;
 var friction = {x:.85,y:.97}
@@ -171,7 +173,7 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].y = wiz.y + 20;
 			bullets[currentBullet].dir = wiz.dir;*/
 			
-			sounds.play(`splode`,1)
+			//sounds.play(`attack`,1)
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
