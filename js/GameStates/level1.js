@@ -1,4 +1,5 @@
 
+
 /*------------Use this if you want to implement States---------------*/
 var gravity = 2;
 var friction = {x:.85,y:.97}
@@ -143,7 +144,7 @@ gameStates[`level1`] = function()
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
 		
-		sounds.play(`splode`,1)
+		//sounds.play(`splode`,1)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
