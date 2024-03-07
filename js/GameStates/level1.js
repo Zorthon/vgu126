@@ -75,8 +75,8 @@ var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
 rbg.img.src=`images/hills.png`
 
 //middleground
-var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+var bg = new GameObject({x:level.x-139,y:level.y+50, width:canvas.width, height:canvas.height})
+bg.img.src=`images/Midground2.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -144,7 +144,7 @@ gameStates[`level1`] = function()
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
 		
-		//sounds.play(`splode`,1)
+		sounds.play(`Jump`,1)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -306,7 +306,7 @@ gameStates[`level1`] = function()
 		{
 			
 			//console.log(`Boom`)
-
+			sounds.play(`attack`,1)
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
 			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
