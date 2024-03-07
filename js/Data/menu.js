@@ -8,7 +8,7 @@ var menuData ={
             cycle:true,
             frames:
             [
-                {width:1024, height:512, startX:0, statY:0},
+                //{width:1024, height:512, startX:0, statY:0},
                 {width:1024, height:512, startX:1*1024, startY:0},
                 {width:1024, height:512, startX:2*1024, startY:0},
                 {width:1024, height:512, startX:3*1024, startY:0},
@@ -22,7 +22,39 @@ var menuData ={
                 {width:1024, height:512, startX:11*1024, startY:0},
                 {width:1024, height:512, startX:12*1024, startY:0}
             ]
+        },
+        stare:{
+            fps:15,
+            cycle:true, 
+            frames:
+            [
+                {width:1024, height:512, startX:0, startY:0}
+            ]
         }
     }
 
+}
+
+var buttonData = {
+    info:{
+        src: 'images/MouthLoop.png'
+    },
+    states:{
+        idle:{
+            fps:15,
+            cycle:true,
+            frames:
+            [
+                {width:188, height:166, startX:0, startY:0}
+            ]
+        },
+        buttonHover:{
+            fps:15,
+            cycle:true,
+            frames:
+            [
+                {width:188, height:166, startX:1*188, startY: 0}
+            ]
+        }
+    }
 }
