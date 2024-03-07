@@ -19,8 +19,8 @@ var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2-200,heig
 ground.img.src=`images/floor.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, x:canvas.width-500, color:"green", world:level})
-
+var plat = new GameObject({width:256, height:128,y:canvas.height-200, x:canvas.width-500, color:"green", world:level})
+plat.img.src='images/Platform.png'
 
 
 var leftBorder = new GameObject({width:50, height:canvas.height, world:level, x:0})
@@ -41,14 +41,13 @@ g1.color= `rgb(251,0,254)`;
 
 //Adds items to a group
 g1.add([ground, leftBorder, caveHit.grid])
-
 //removes items from a group
 //g1.remove([plat, cave.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
-
+rects.add([ground])
+//rects.remove([plat])
 //used to render the sprites
 var sprites = new Group();
 sprites.add([caveBack.grid])
@@ -77,7 +76,6 @@ rbg.img.src=`images/hills.png`
 //middleground
 var bg = new GameObject({x:level.x-139,y:level.y+50, width:canvas.width, height:canvas.height})
 bg.img.src=`images/Midground2.png`
-
 /*------------------vvBULLET STUFFvv----------------------*/
 
 var bullets=[]
@@ -267,7 +265,8 @@ gameStates[`level1`] = function()
 	var groundPattern = context.createPattern(ground.img, `repeat`);
 	//Applies pattern to ground and platform
 	ground.color = groundPattern
-	plat.color = groundPattern
+	//plat.color = plat
+	
 
 	//Sets up pattern for the sky
 	var skyPattern = context.createPattern(sky.img, `repeat`);
@@ -290,7 +289,7 @@ gameStates[`level1`] = function()
 
 	//renders the objects in the rect group
 	rects.render(`drawRect`)
-	
+	plat.drawStaticImage({x:-128,y:-65});
 	/*----Used for debugging----*/
 	/*context.beginPath()
 	context.moveTo(0,wiz.bottom.y)
@@ -307,7 +306,7 @@ gameStates[`level1`] = function()
 			
 			//console.log(`Boom`)
 			sounds.play(`attack`,1)
-			bullets[currentBullet].vx = 5*wiz.dir;
+			bullets[currentBullet].vx = 8*wiz.dir;
 			bullets[currentBullet].world = level;
 			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
 			bullets[currentBullet].y = wiz.y + 5;
